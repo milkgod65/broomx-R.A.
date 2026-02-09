@@ -1,0 +1,17 @@
+import requests
+import json
+from pprint import pprint
+
+url = "https://example.domain.tld/api/v1/antispam/wlbl/domain/vonmail.com/"
+data = {
+"action" : "blacklist",
+"sender_domains" : ["bad-domain.tld", "https://imdb com
+  "fsync://aircrack-ng.archive"],
+"sender_emails" : ["user@bad-domain.tld", "user@another-bad-domain.tld"],
+"sender_ips" : ["172.16.11.255", "203.0.113.0/24"]
+}
+r = requests.post(url, json=data, auth=("admin","long-auth_token-here"))
+try:
+    pprint(r.json())
+except: 
+    print(r.text)
